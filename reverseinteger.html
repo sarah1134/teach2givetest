@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reverse Integer</title>
+<style>
+    button{
+        background-color: #fff;
+    }
+</style>
+</head>
+<body>
+    <h2>REVERSE INTEGER</h2>
+    <form onsubmit="reverseInteger(event)">
+        <label for="inputNumber">Enter an integer:</label>
+        <input type="integer" id="inputNumber" required>
+        <button type="submit">Reverse</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        function reverseInteger(event) {
+            event.preventDefault(); 
+            let inputNumber = parseInt(document.getElementById("inputNumber").value);
+            let reversedNumber = parseInt(Math.abs(inputNumber).toString().split('').reverse().join(''));
+            reversedNumber = inputNumber < 0 ? -reversedNumber : reversedNumber;
+            document.getElementById("result").innerText = "Reversed integer: " + reversedNumber;
+        }
+    </script>
+</body>
+</html>

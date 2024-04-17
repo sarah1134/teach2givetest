@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Capitalize Words</title>
+<style>button{background-color: #fff};</style>
+</head>
+<body>
+    <h2>CAPITALIZE WORDS</h2>
+    <form onsubmit="capitalizeWords(event)">
+        <label for="inputString">Enter a string:</label>
+        <input type="text" id="inputString" required>
+        <button type="submit">Capitalize</button>
+    </form>
+    <p id="result"></p>
+    <script>
+        function capitalizeWords(event) {
+            event.preventDefault(); 
+            let inputString = document.getElementById("inputString").value;
+            let words = inputString.split(" ");
+            for (let x = 0; x < words.length; x++) {
+                words[x] = words[x].charAt(0).toUpperCase() + words[x].slice(1);
+            }
+            let resultString = words.join(" ");
+            document.getElementById("result").innerText = resultString;
+        }
+    </script>
+</body>
+</html>

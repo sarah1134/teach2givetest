@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Count Vowels</title>
+<style>button{background-color: #fff};</style>
+</head>
+<body>
+    <h2>VOWELS COUNT</h2>
+    <form onsubmit="countVowels(event)">
+        <label for="inputSentence">Enter a sentence:</label>
+        <input type="text" id="inputSentence" required>
+        <button type="submit">Count</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function countVowels(event) {
+            event.preventDefault(); 
+            let inputSentence = document.getElementById("inputSentence").value.toLowerCase();
+            let vowelsSet = new Set();
+            for (let x = 0; x < inputSentence.length; x++) {
+                if (['a', 'e', 'i', 'o', 'u'].includes(inputSentence[x])) {
+                    vowelsSet.add(inputSentence[x]);
+                }
+            }
+            document.getElementById("result").innerText = "vowels: " + vowelsSet.size;
+        }
+    </script>
+</body>
+</html>

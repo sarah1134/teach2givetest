@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power of Two Checker</title>
+<style>
+    form{ 
+        max-width: 400px;
+    }
+    button{
+        background-color: #fff;
+
+    }
+</style>
+</head>
+<body>
+    <h2>POWER OF TWO CHECKER</h2>
+    <label for="number">Enter a number:</label>
+    <input type="integer" id="number">
+    <button onclick="checkPowerOfTwo()">Check</button>
+    <p id="result"></p>
+    <script>
+        function checkPowerOfTwo() {
+            let num = parseInt(document.getElementById("number").value);
+            let isPowerOfTwo = (num & (num - 1)) === 0 && num !== 0;
+            document.getElementById("result").innerText = isPowerOfTwo ? "TRUE" : "FALSE";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fibonacci Sequence</title>
+</head>
+<body>
+    <h1>FIBONACCI SEQUENCE</h1>
+<script>
+    function fibonacciSequence(limit) {
+        let fib = [0, 1];
+        document.write(fib[0] + ", " + fib[1] + ", ");
+        for (let x = 2; x < limit; x++) {
+            fib[x] = fib[x - 1] + fib[x - 2];
+            if (fib[x] > 100) break; // Stop if Fibonacci number exceeds 100
+            document.write(fib[x] + ", ");
+        } }
+    fibonacciSequence(100);
+</script>
+</body>
+</html>
